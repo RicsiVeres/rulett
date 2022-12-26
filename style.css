@@ -1,0 +1,120 @@
+@import url('https://css.gg/square.css');
+*{
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(#5c1a91, #a67ee7);
+    overflow: hidden;
+}
+
+.content{
+    width: 100vw;
+    height: 100vh;
+    background: none;
+}
+
+.betnumbers{
+    width: 700px;
+    border-radius: 10px solid black;
+    display:block;
+    background: none;
+    justify-content: space-between;
+}
+
+button{
+    width: 50px;
+    height: 50px;
+    margin-right: 3px;
+    border-radius: 20%;
+    background: none;
+    color: #fff;
+}
+button:hover{
+    background-color: #5a8ceb;
+}
+.btncolorg{
+    background-color: green;
+    border: none;
+    height: 150px;
+    border-radius: 1rem 0rem 0rem 1rem;
+}
+.btncolorR{
+    background-color: red;
+    border: none;
+
+}
+.btncolorB{
+    background-color: black;
+    color: white;
+    border: none;
+
+}
+.multiplebtn{
+    background: none;
+
+}
+
+
+.zerro{
+    background: none;
+    display: flex;
+}
+
+#rendez{
+    display: flex;
+    background: none;
+    text-align: center;
+    justify-content:center;
+    margin-top: 5%;
+}
+
+.linesmultiple{
+    background: none;
+    display: grid;
+    
+}
+.linesmultiple button{
+    border-color: #fff;
+
+}
+
+.rowsmultiples{
+    background: none;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+.rowsmultiples button{
+    width: 225px;
+    border-radius: 0%;
+    border-color: #fff;
+    
+}
+
+.multiplers{
+    background: none;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+
+}
+.multiplers button{
+    width: 111px;
+    border-radius: 0%;
+    border-color: #fff;
+}
+
+.multipleRed{
+    color: red;
+    padding-left: 45px;
+    
+}
+i{
+    font-size: 24px;
+    padding: 8px;
+    background:none;
+}
+
+.multipleBlack{
+    color: black;
+    padding-left: 45px;
+}

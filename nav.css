@@ -1,0 +1,25 @@
+
+
+nav{
+    background: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 1% 8%;
+    color: white;
+}
+h1{
+    background: none;
+}
+h2{
+    background: none;
+    display: flex;
+    color: white;
+}
+p{
+    background:none;
+    color: yellow;
+}
+span{
+    background: none;
+    color: yellow;
+}
