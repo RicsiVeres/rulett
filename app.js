@@ -4,6 +4,7 @@ let porgete = false;
 const kerek = document.getElementById('kerek');
 const labdaWrap = document.getElementById('labda-wrapper');
 const labda = document.getElementById('labda');
+const nyertessz = document.querySelector(".nyertesSz");
 const rulettSzamokSorrend = [0, 32, 15, 19, 4, 21, 2, 25, 17, 34, 6, 27, 13, 36, 11, 30, 8, 23, 10, 5, 24, 16, 33, 1, 20, 14, 31, 9, 22, 18, 29, 7, 28, 12, 35, 3, 26];
 function porget() {
     if (porgete) {
@@ -60,5 +61,6 @@ function labdaMegakad(){
     labdaForgHelyzet = (nyertesszam * (360/37)) + kerekHelyzet;
     nyertesszam = rulettSzamokSorrend[(nyertesszam+37)%37]
     console.log(nyertesszam);
+    nyertessz.innerHTML = nyertesszam;
     
 }
