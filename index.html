@@ -13,19 +13,13 @@
     <div class="content">
         <nav>
             <h1>RichLotto</h1>
-            <h2>Zseton: <p>0</p> <span>$</span></h2>
+            <h2>Zseton: <p id="zseton">0</p> <span>$</span></h2>
         </nav>
         <div id="rendez">
-
             <div class="zerro">
                 <button class="btncolorg" onclick="nulla(this)">0</button>
             </div>
-
             <div class="betnumbers">
-                <!-- 12 oszlop 50px maxw = 600 px-->
-                
-                
-                
                 <button class="btncolorR btn3" onclick="szam(this)">3</button>
                 <button class="btncolorB btn6"onclick="szam(this)">6</button>
                 <button class="btncolorR btn9"onclick="szam(this)">9</button>
@@ -63,21 +57,17 @@
                 <button class="btncolorB btn31"onclick="szam(this)">31</button>
                 <button class="btncolorR btn34"onclick="szam(this)">34</button>
             </div>
-
             <div class="linesmultiple">
                 <button class="multiplebtn" onclick="felsosor(this)">3to1</button>
                 <button class="multiplebtn" onclick="kozepsosor(this)">2to1</button>
                 <button class="multiplebtn" onclick="alsosor(this)">1to1</button>
             </div>
-            
         </div>
-
         <div class="rowsmultiples">
             <button class="multiplebtn" onclick="elso12(this)">1st12</button>
             <button class="multiplebtn" onclick="masodik12(this)">2nd12</button>
             <button class="multiplebtn" onclick="harmadik(this)">3rd12</button>
         </div>
-
         <div class="multiplers">
                 <button class="multiplebtn" onclick="egyto18(this)">1to18</button>
                 <button class="multiplebtn" onclick="paros(this)">even</button>
@@ -85,11 +75,16 @@
                 <button class="multipleBlack" onclick="blacks(this)"><i class="gg-square blackcenter"></i></button>
                 <button class="multiplebtn" onclick="paratlan(this)">odd</button>
                 <button class="multiplebtn" onclick="tizenkilencto36(this)">19to36</button>
-            </div>
-        
-        
+        </div>
+        <div class="tetek">
+            <button class="bet" onclick="kivalasztottBet(this)">25</button>
+            <button class="bet" onclick="kivalasztottBet(this)">50</button>
+            <button class="bet" onclick="kivalasztottBet(this)">100</button>
+            <button class="bet" onclick="kivalasztottBet(this)">200</button>
+            <button class="bet" onclick="kivalasztottBet(this)">500</button>
+            <button class="clear" onclick="vissza(this)">Clear</button>
+        </div>
     </div>
-        
     <script src="app.js"></script>
     <script src="bet.js"></script>
 </body>
