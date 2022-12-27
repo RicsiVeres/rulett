@@ -2,7 +2,8 @@
 *{
     margin: 0;
     padding: 0;
-    background: linear-gradient(#5c1a91, #a67ee7);
+    /*background: linear-gradient(#5c1a91, #a67ee7);*/
+    background-color:blueviolet;
     overflow: hidden;
 }
 
@@ -118,4 +119,51 @@ i{
 .multipleBlack{
     color: black;
     padding-left: 45px;
+}
+
+
+/* keriik*/
+:root{
+    --labda-meret: 3vmin;
+}
+.wrapper{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    max-height: 50vh;
+    grid-area: kerek;
+    align-items: center;
+    align-content: center;
+
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    background: none;
+
+}
+#kerek{
+    display: block;
+    width: 80%;
+    height: 80%;
+    align-self: center;
+    justify-self: center;
+    aspect-ratio: 1/1;
+    background: none;
+}
+#labda{
+    position: absolute;
+    height: 5%;
+    border-radius: 100%;
+    left: 49.2%;
+    aspect-ratio: 1/1;
+    z-index: 8;
+    background-color: white !important;
+
+}
+#labda-wrapper{
+    top: 10%;
+    position: absolute;
+    height: 80%;
+    width: 80%;
+    background: none;
+
 }
