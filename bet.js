@@ -1,7 +1,7 @@
 let x = document.getElementsByTagName("button");
 let x5 = document.querySelector("#zseton");
 let nyertesszam = document.querySelector(".nyertesSz");
-let kijeloltbet = 25;
+let kijeloltbet = 100;
 let zseton = 5000;
 
 const haromto1 = [3,6,9,12,15,10,21,24,27,30,33,36];
@@ -36,7 +36,6 @@ let d23to1 = [];
 let d22to1 = [];
 let d21to1 = [];
 
-let zerro = [];
 
 
 
@@ -86,6 +85,13 @@ let AlsoSor = [ ];
 let ElsoOszlop = [ ];
 let MasodikOszlop = [ ];
 let HarmadikOszlop = [ ];
+let To18 = [ ];
+let To36 = [ ];
+let Even = [ ];
+let Odd = [ ];
+let DNulla = [ ];
+let Fekete = [ ];
+let Piros = [ ];
 
 function log() {
     console.log(
@@ -105,37 +111,30 @@ function log() {
         zerro);
 }
 function paros(item) {
-    for (let i = 1; i < 37; i++) {
-        if (x[i].innerText % 2 === 0) {
-            console.log(x[i].innerText);
-            d2even[x[i].innerText] = kijeloltbet;
-        }
-    }
+    zseton -= kijeloltbet;
+    Even.push(kijeloltbet)
+    penz();
 }
 function paratlan(item) {
-    for (let i = 0; i < 36; i++) {
-        if (x[i].innerText % 2 !== 0 && x[i].innerText < 37) {
-            console.log(x[i].innerText);
-            d2odd[x[i].innerText] = kijeloltbet;
-        }
-    }
+    zseton -= kijeloltbet;
+    Odd.push(kijeloltbet)
+    penz();
 }
 
 function egyto18(item) {
-    for (let i = 0; i < x.length; i++) {
-        if (x[i].innerText < 19) {
-            console.log(x[i].innerText);
-            d21to18[x[i].innerText] = kijeloltbet;
-        }
-    }
+    zseton -= kijeloltbet;
+    To18.push(kijeloltbet)
+    penz();
+}
+function nulla(item) {
+    zseton -= kijeloltbet;
+    DNulla.push(kijeloltbet)
+    penz();
 }
 function tizenkilencto36(item) {
-    for (let i = 0; i < x.length; i++) {
-        if (18 < x[i].innerText && x[i].innerText < 37) {
-            console.log(x[i].innerText);
-            d219to36[x[i].innerText] = kijeloltbet;
-        }
-    }
+    zseton -= kijeloltbet;
+    To36.push(kijeloltbet)
+    penz();
 }
 function elso12(item) {
     zseton -= kijeloltbet;
@@ -153,18 +152,14 @@ function harmadik(item) {
     penz();
 }
 function reds(item) {
-    let pirosak = [3,9,12,18,21,27,30,36,5,14,23,32,1,7,16,19,25,34]
-    pirosak.forEach(element => {
-        console.log(element);
-        d2red.push(element);
-    });
+    zseton -= kijeloltbet;
+    Piros.push(kijeloltbet)
+    penz();
 }
 function blacks(item) {
-    let feketek = [6,15,24,33,2,8,11,17,20,26,29,35,4,10,13,22,28,31]
-    feketek.forEach(element => {
-        console.log(element);
-        d2black.push(element);
-    });
+    zseton -= kijeloltbet;
+    Fekete.push(kijeloltbet)
+    penz();
 }
 
 function felsosor(item) {
@@ -183,10 +178,7 @@ function alsosor(item) {
     AlsoSor.push(kijeloltbet)
     penz();
 }
-function nulla(item) {
-    console.log(item.innerText);
-    zerro.push(kijeloltbet)
-}
+
 
 function szam(item) {
     console.log(item.innerText);
@@ -200,7 +192,97 @@ function kivalasztottBet(item) {
 }
 
 penz()
+function allfekete(params) {
+    let feketek = [6,15,24,33,2,8,11,17,20,26,29,35,4,10,13,22,28,31];
+    let felrakotbet = 0;
+    feketek.forEach(i => {
+        if (nyertesszam == i) {
+            Piros.forEach(element => {
+                felrakotbet = felrakotbet + element *1;
+            });
+            zseton = zseton + felrakotbet*2;
+            console.log("win!");
+            penz();
+        }
+    });
+}
+function allpiros(params) {
+    let pirosak = [3,9,12,18,21,27,30,36,5,14,23,32,1,7,16,19,25,34];
+    let felrakotbet = 0;
+    pirosak.forEach(i => {
+        if (nyertesszam == i) {
+            Fekete.forEach(element => {
+                felrakotbet = felrakotbet + element *1;
+            });
+            zseton = zseton + felrakotbet*2;
+            console.log("win!");
+            penz();
+        }
+    });
+}
 
+function to36() {
+    let felrakotbet = 0;
+    if (To36.length > 0) {
+        for (let i = 19; i <= 36; i++) {
+            if (i == nyertesszam) {
+                To36.forEach(element => {
+                    felrakotbet = felrakotbet + element *1;
+                });
+                zseton = zseton + felrakotbet*2;
+                console.log("win!");
+                penz();
+            }
+        }
+    }
+}
+function odd() {
+    let felrakotbet = 0;
+    if (Odd.length > 0) {
+        for (let i = 1; i <= 36; i+=2) {
+            console.log(i);
+            if (i == nyertesszam) {
+                Odd.forEach(element => {
+                    felrakotbet = felrakotbet + element *1;
+                });
+                zseton = zseton + felrakotbet*2;
+                console.log("win!");
+                penz();
+            }
+        }
+    }
+}
+function even() {
+    let felrakotbet = 0;
+    if (Even.length > 0) {
+        for (let i = 1; i % 2 == 0; i++) {
+            console.log(i);
+            if (i == nyertesszam) {
+                Even.forEach(element => {
+                    felrakotbet = felrakotbet + element *1;
+                });
+                zseton = zseton + felrakotbet*2;
+                console.log("win!");
+                penz();
+            }
+        }
+    }
+}
+function to18() {
+    let felrakotbet = 0;
+    if (To18.length > 0) {
+        for (let i = 1; i <= 18; i++) {
+            if (i == nyertesszam) {
+                To18.forEach(element => {
+                    felrakotbet = felrakotbet + element *1;
+                });
+                zseton = zseton + felrakotbet*2;
+                console.log("win!");
+                penz();
+            }
+        }
+    }
+}
 function FelsoSorraFelrakottBet() {
     let felrakotbet = 0;
     if (FelsoSor.length > 0) {
@@ -308,10 +390,19 @@ function SzamokraFelrakottBet() {
         console.log("Bukta");
     }
 }
-
-
-
-
+function zerro() {
+    let felrakotbet = 0;
+    if (DNulla.length > 0) {
+        if (nyertesszam == 0) {
+            DNulla.forEach(element => {
+                felrakotbet = felrakotbet + element *1;
+            });
+            zseton = zseton + felrakotbet*40;
+            console.log("win!");
+            penz();
+        }
+    }
+}
 function vissza(item) {
    // nyerte();
    SzamokraFelrakottBet();
@@ -321,4 +412,11 @@ function vissza(item) {
    ElsoOszlopraFelrakottBet();
    MasodikOszlopraFelrakottBet();
    HarmadikOszlopraFelrakottBet();
+   to18();
+   to36();
+   even();
+   odd();
+   zerro();
+   allpiros();
+   allfekete();
 }
