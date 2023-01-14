@@ -56,11 +56,10 @@ function porget() {
 }
 function labdaMegakad(){
     nyertesszam = Math.round( (labdaForgHelyzet)/ ( 360/37 )- (kerekHelyzet / (360/37)))
-
-
     labdaForgHelyzet = (nyertesszam * (360/37)) + kerekHelyzet;
     nyertesszam = rulettSzamokSorrend[(nyertesszam+37)%37]
     console.log(nyertesszam);
     nyertessz.innerHTML = nyertesszam;
+    winnerNum = nyertesszam;
     
 }

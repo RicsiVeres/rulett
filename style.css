@@ -171,3 +171,8 @@ i{
     display: flex;
     justify-content: center;
 }
+    
+#kozepre{
+    display: flex;
+    min-width: 1124px;
+}
