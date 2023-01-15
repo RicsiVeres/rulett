@@ -3,42 +3,9 @@ let x5 = document.querySelector("#zseton");
 let nyertesszam = document.querySelector(".nyertesSz");
 let kijeloltbet = 100;
 let zseton = 5000;
-
-const haromto1 = [3,6,9,12,15,10,21,24,27,30,33,36];
-const kettoto1 = [2,5,8,11,14,17,20,23,26,29,32,35];
-const egyto1 = [1,4,7,10,13,16,19,22,25,28,31,34];
-
-const egyst12 = [1,2,3,4,5,6,7,8,9,10,11,12];
-const kettond12 = [13,14,15,16,17,18,19,20,21,22,23,24];
-const haromrd12 = [25,26,27,28,29,30,31,32,33,34,35,36];
-
-const egy18 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18];
-const tizenkilenctoharminchat = [19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36];
-
 function penz() {
     x5.innerHTML = zseton;
 }
-
-let d2haromto1 = [];
-let d2kettoto1 = [];
-let d2egyto1 = [];
-let d21to18 = [];
-let d219to36 = [];
-let d2ist12 = [];
-let d22nd12 = [];
-let d23rd12 = [];
-let d2even = [];
-let d2odd = [];
-let d2red = [];
-let d2black = [];
-
-let d23to1 = [];
-let d22to1 = [];
-let d21to1 = [];
-
-
-
-
 let d = {
     0:[],
     1:[],
@@ -197,20 +164,6 @@ function allfekete(params) {
     let felrakotbet = 0;
     feketek.forEach(i => {
         if (nyertesszam == i) {
-            Piros.forEach(element => {
-                felrakotbet = felrakotbet + element *1;
-            });
-            zseton = zseton + felrakotbet*2;
-            console.log("win!");
-            penz();
-        }
-    });
-}
-function allpiros(params) {
-    let pirosak = [3,9,12,18,21,27,30,36,5,14,23,32,1,7,16,19,25,34];
-    let felrakotbet = 0;
-    pirosak.forEach(i => {
-        if (nyertesszam == i) {
             Fekete.forEach(element => {
                 felrakotbet = felrakotbet + element *1;
             });
@@ -219,6 +172,22 @@ function allpiros(params) {
             penz();
         }
     });
+    Fekete = [ ];
+}
+function allpiros(params) {
+    let pirosak = [3,9,12,18,21,27,30,36,5,14,23,32,1,7,16,19,25,34];
+    let felrakotbet = 0;
+    pirosak.forEach(i => {
+        if (nyertesszam == i) {
+            Piros.forEach(element => {
+                felrakotbet = felrakotbet + element *1;
+            });
+            zseton = zseton + felrakotbet*2;
+            console.log("win!");
+            penz();
+        }
+    });
+    Piros = [ ];
 }
 
 function to36() {
@@ -235,6 +204,7 @@ function to36() {
             }
         }
     }
+    To36 = [ ];
 }
 function odd() {
     let felrakotbet = 0;
@@ -251,6 +221,7 @@ function odd() {
             }
         }
     }
+    Odd = [ ];
 }
 function even() {
     let felrakotbet = 0;
@@ -267,6 +238,7 @@ function even() {
             }
         }
     }
+    Even = [ ];
 }
 function to18() {
     let felrakotbet = 0;
@@ -282,6 +254,7 @@ function to18() {
             }
         }
     }
+    To18 = [ ];
 }
 function FelsoSorraFelrakottBet() {
     let felrakotbet = 0;
@@ -297,6 +270,7 @@ function FelsoSorraFelrakottBet() {
             }
         }
     }
+    FelsoSor = [ ];
 }
 function KozepsoSorraFelrakottBet() {
     let felrakotbet = 0;
@@ -312,6 +286,7 @@ function KozepsoSorraFelrakottBet() {
             }
         }    
     }
+    KozepsoSor = [ ];
 }
 function AlsoSorraFelrakottBet() {
     let felrakotbet = 0;
@@ -327,7 +302,7 @@ function AlsoSorraFelrakottBet() {
             }
         }    
     }
-    
+    AlsoSor = [ ];
 }
 function ElsoOszlopraFelrakottBet() {
     let felrakotbet = 0;
@@ -343,6 +318,7 @@ function ElsoOszlopraFelrakottBet() {
             }
         }    
     }
+    ElsoOszlop = [ ];
 }
 function MasodikOszlopraFelrakottBet() {
     let felrakotbet = 0;
@@ -358,6 +334,7 @@ function MasodikOszlopraFelrakottBet() {
             }
         }    
     }
+    MasodikOszlop = [ ];
 }
 function HarmadikOszlopraFelrakottBet() {
     let felrakotbet = 0;
@@ -373,22 +350,27 @@ function HarmadikOszlopraFelrakottBet() {
             }
         }    
     }
+    HarmadikOszlop =[ ];
 }
 function SzamokraFelrakottBet() {
     let felrakotbet = 0;
-    if (d[nyertesszam].length > 0 && d[nyertesszam] != 0) {
-        console.log("Megnyerted!", 
-        d[nyertesszam].forEach(element => {
-            felrakotbet = felrakotbet + element *1;
-            zseton = zseton + felrakotbet*36;
-            penz(); 
-        }),
-        console.log("Profit:",felrakotbet*36),
-        console.log(felrakotbet),
-        );
-    }else{
-        console.log("Bukta");
+    try {
+        if (d[nyertesszam].length > 0 && d[nyertesszam] != 0) {
+            d[nyertesszam].forEach(element => {
+                felrakotbet = felrakotbet + element *1;
+                zseton = zseton + felrakotbet*36;
+                penz(); 
+            }),
+            console.log("Profit:",felrakotbet*36),
+            console.log(felrakotbet)
+        }else{
+            console.log("Bukta fqgqge");
+        }
+    } catch (error) {
+        console.log(error);
     }
+    
+    d = [ ];
 }
 function zerro() {
     let felrakotbet = 0;
@@ -402,6 +384,7 @@ function zerro() {
             penz();
         }
     }
+    DNulla = [];
 }
 function vissza(item) {
    // nyerte();

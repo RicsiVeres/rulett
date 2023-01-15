@@ -107,7 +107,7 @@ button:hover{
 .multipleRed{
     color: red;
     padding-left: 45px;
-    
+    background-color: red;
 }
 
 i{
@@ -119,6 +119,7 @@ i{
 .multipleBlack{
     color: black;
     padding-left: 45px;
+    background-color: black;
 }
 
 
