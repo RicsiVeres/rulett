@@ -1,11 +1,10 @@
 let x = document.getElementsByTagName("button");
 let x5 = document.querySelector("#zseton");
 let nyertesszam = document.querySelector(".nyertesSz");
+let zseton = 5100;
 let kijeloltbet = 100;
-let zseton = 5000;
-function penz() {
-    x5.innerHTML = zseton;
-}
+
+
 let d = {
     0:[],
     1:[],
@@ -77,88 +76,65 @@ function log() {
         d21to1,
         zerro);
 }
-function paros(item) {
-    zseton -= kijeloltbet;
-    Even.push(kijeloltbet)
-    penz();
+function penz(tomb) {
+    if (zseton - kijeloltbet >= 0) {
+        zseton -= kijeloltbet;
+        x5.innerHTML = zseton;
+        tomb.push(kijeloltbet)
+    }
+}
+function paros() {
+    penz(Even);
 }
 function paratlan(item) {
-    zseton -= kijeloltbet;
-    Odd.push(kijeloltbet)
-    penz();
+    penz(Odd);
 }
 
 function egyto18(item) {
-    zseton -= kijeloltbet;
-    To18.push(kijeloltbet)
-    penz();
+    penz(To18);
 }
 function nulla(item) {
-    zseton -= kijeloltbet;
-    DNulla.push(kijeloltbet)
-    penz();
+    penz(DNulla);
 }
 function tizenkilencto36(item) {
-    zseton -= kijeloltbet;
-    To36.push(kijeloltbet)
-    penz();
+    penz(To36);
 }
 function elso12(item) {
-    zseton -= kijeloltbet;
-    ElsoOszlop.push(kijeloltbet)
-    penz();
+    penz(ElsoOszlop);
 }
 function masodik12(item) {
-    zseton -= kijeloltbet;
-    MasodikOszlop.push(kijeloltbet)
-    penz();
+    penz(MasodikOszlop);
 }
 function harmadik(item) {
-    zseton -= kijeloltbet;
-    HarmadikOszlop.push(kijeloltbet)
-    penz();
+    penz(HarmadikOszlop);
 }
 function reds(item) {
-    zseton -= kijeloltbet;
-    Piros.push(kijeloltbet)
-    penz();
+    penz(Piros);
 }
 function blacks(item) {
-    zseton -= kijeloltbet;
-    Fekete.push(kijeloltbet)
-    penz();
+    penz(Fekete);
 }
 
 function felsosor(item) {
-    zseton -= kijeloltbet;
-    FelsoSor.push(kijeloltbet)
-    penz();
+    penz(FelsoSor);
 }
 function kozepsosor(item) {
-    zseton -= kijeloltbet;
-    KozepsoSor.push(kijeloltbet)
-    penz();
+    penz(KozepsoSor);
 }
 function alsosor(item) {
-    //AlsoSor
-    zseton -= kijeloltbet;
-    AlsoSor.push(kijeloltbet)
-    penz();
+    penz(AlsoSor);
 }
 
 
 function szam(item) {
-    console.log(item.innerText);
-    zseton -= kijeloltbet;
-    d[item.innerText].push(kijeloltbet)
-    penz();
+    penz(d[item.innerText]);
 }
 function kivalasztottBet(item) {
     kijeloltbet = item.innerText;
     console.log("Kijelolve: ",kijeloltbet);
 }
 
-penz()
+//penz()
 function allfekete(params) {
     let feketek = [6,15,24,33,2,8,11,17,20,26,29,35,4,10,13,22,28,31];
     let felrakotbet = 0;
@@ -169,7 +145,8 @@ function allfekete(params) {
             });
             zseton = zseton + felrakotbet*2;
             console.log("win!");
-            penz();
+            x5.innerHTML = zseton;
+            
         }
     });
     Fekete = [ ];
@@ -184,7 +161,7 @@ function allpiros(params) {
             });
             zseton = zseton + felrakotbet*2;
             console.log("win!");
-            penz();
+            x5.innerHTML = zseton;
         }
     });
     Piros = [ ];
@@ -200,7 +177,7 @@ function to36() {
                 });
                 zseton = zseton + felrakotbet*2;
                 console.log("win!");
-                penz();
+                x5.innerHTML = zseton;
             }
         }
     }
@@ -217,7 +194,7 @@ function odd() {
                 });
                 zseton = zseton + felrakotbet*2;
                 console.log("win!");
-                penz();
+                x5.innerHTML = zseton;
             }
         }
     }
@@ -234,7 +211,7 @@ function even() {
                 });
                 zseton = zseton + felrakotbet*2;
                 console.log("win!");
-                penz();
+                x5.innerHTML = zseton;
             }
         }
     }
@@ -250,7 +227,7 @@ function to18() {
                 });
                 zseton = zseton + felrakotbet*2;
                 console.log("win!");
-                penz();
+                x5.innerHTML = zseton;
             }
         }
     }
@@ -266,7 +243,7 @@ function FelsoSorraFelrakottBet() {
                 });
                 zseton = zseton + felrakotbet*2;
                 console.log("win!");
-                penz();
+                x5.innerHTML = zseton;
             }
         }
     }
@@ -282,7 +259,7 @@ function KozepsoSorraFelrakottBet() {
                 });
                 zseton = zseton + felrakotbet*2;
                 console.log("win!");
-                penz();
+                x5.innerHTML = zseton;
             }
         }    
     }
@@ -298,7 +275,7 @@ function AlsoSorraFelrakottBet() {
                 });
                 zseton = zseton + felrakotbet*2;
                 console.log("win!");
-                penz();
+                x5.innerHTML = zseton;
             }
         }    
     }
@@ -314,7 +291,7 @@ function ElsoOszlopraFelrakottBet() {
                 });
                 zseton = zseton + felrakotbet*2;
                 console.log("win!");
-                penz();
+                x5.innerHTML = zseton;
             }
         }    
     }
@@ -330,7 +307,7 @@ function MasodikOszlopraFelrakottBet() {
                 });
                 zseton = zseton + felrakotbet*2;
                 console.log("win!");
-                penz();
+                x5.innerHTML = zseton;
             }
         }    
     }
@@ -346,7 +323,7 @@ function HarmadikOszlopraFelrakottBet() {
                 });
                 zseton = zseton + felrakotbet*2;
                 console.log("win!");
-                penz();
+                x5.innerHTML = zseton;
             }
         }    
     }
@@ -359,7 +336,6 @@ function SzamokraFelrakottBet() {
             d[nyertesszam].forEach(element => {
                 felrakotbet = felrakotbet + element *1;
                 zseton = zseton + felrakotbet*36;
-                penz(); 
             }),
             console.log("Profit:",felrakotbet*36),
             console.log(felrakotbet)
@@ -381,7 +357,7 @@ function zerro() {
             });
             zseton = zseton + felrakotbet*40;
             console.log("win!");
-            penz();
+            x5.innerHTML = zseton;
         }
     }
     DNulla = [];

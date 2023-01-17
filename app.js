@@ -1,3 +1,4 @@
+
 let kerekHelyzet = 0;
 let labdaForgHelyzet = 0;
 let porgete = false;
@@ -54,12 +55,21 @@ function porget() {
     }, 15);    
  
 }
+try {
+    require('./bet');
+    require('./start');
+} catch (error) {
+    
+}
 function labdaMegakad(){
     nyertesszam = Math.round( (labdaForgHelyzet)/ ( 360/37 )- (kerekHelyzet / (360/37)))
     labdaForgHelyzet = (nyertesszam * (360/37)) + kerekHelyzet;
     nyertesszam = rulettSzamokSorrend[(nyertesszam+37)%37]
     console.log(nyertesszam);
+    vissza();
     nyertessz.innerHTML = nyertesszam;
     winnerNum = nyertesszam;
-    
+    setTimeout(() => {
+        lefttime = varakozoido;
+    }, 3000);
 }
