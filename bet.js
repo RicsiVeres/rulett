@@ -261,7 +261,7 @@ function FelsoSorraFelrakottBet() {
         FelsoSor.forEach((element) => {
           felrakotbet = felrakotbet + element * 1;
         });
-        zseton = zseton + felrakotbet * 2;
+        zseton = zseton + felrakotbet * 3;
         console.log("win!");
         x5.innerHTML = zseton;
       }
@@ -277,7 +277,7 @@ function KozepsoSorraFelrakottBet() {
         KozepsoSor.forEach((element) => {
           felrakotbet = felrakotbet + element * 1;
         });
-        zseton = zseton + felrakotbet * 2;
+        zseton = zseton + felrakotbet * 3;
         console.log("win!");
         x5.innerHTML = zseton;
       }
@@ -293,7 +293,7 @@ function AlsoSorraFelrakottBet() {
         AlsoSor.forEach((element) => {
           felrakotbet = felrakotbet + element * 1;
         });
-        zseton = zseton + felrakotbet * 2;
+        zseton = zseton + felrakotbet * 3;
         console.log("win!");
         x5.innerHTML = zseton;
       }
@@ -309,7 +309,7 @@ function ElsoOszlopraFelrakottBet() {
         ElsoOszlop.forEach((element) => {
           felrakotbet = felrakotbet + element * 1;
         });
-        zseton = zseton + felrakotbet * 2;
+        zseton = zseton + felrakotbet * 3;
         console.log("win!");
         x5.innerHTML = zseton;
       }
@@ -325,7 +325,7 @@ function MasodikOszlopraFelrakottBet() {
         MasodikOszlop.forEach((element) => {
           felrakotbet = felrakotbet + element * 1;
         });
-        zseton = zseton + felrakotbet * 2;
+        zseton = zseton + felrakotbet * 3;
         console.log("win!");
         x5.innerHTML = zseton;
       }
@@ -341,7 +341,7 @@ function HarmadikOszlopraFelrakottBet() {
         HarmadikOszlop.forEach((element) => {
           felrakotbet = felrakotbet + element * 1;
         });
-        zseton = zseton + felrakotbet * 2;
+        zseton = zseton + felrakotbet * 3;
         console.log("win!");
         x5.innerHTML = zseton;
       }
