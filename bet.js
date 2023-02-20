@@ -1,8 +1,8 @@
 let x = document.getElementsByTagName("button");
 let x5 = document.querySelector("#zseton");
 let nyertesszam = document.querySelector(".nyertesSz");
-let zseton = 5100;
-let kijeloltbet = 100;
+let zseton = 5000;
+let kijeloltbet = 0;
 
 let d = {
   0: [],
@@ -101,6 +101,7 @@ function penz(tomb) {
     tomb.push(kijeloltbet);
   }
 }
+
 function paros() {
   penz(Even);
 }
@@ -151,7 +152,6 @@ function kivalasztottBet(item) {
   console.log("Kijelolve: ", kijeloltbet);
 }
 
-//penz()
 function allfekete(params) {
   let feketek = [
     6, 15, 24, 33, 2, 8, 11, 17, 20, 26, 29, 35, 4, 10, 13, 22, 28, 31,
