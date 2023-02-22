@@ -1,9 +1,22 @@
 let x = document.getElementsByTagName("button");
 let x5 = document.querySelector("#zseton");
+let Lox = document.querySelector(".lox");
+let content = document.querySelector(".content");
+var audio = new Audio("sedevr.mp3");
+
 let nyertesszam = document.querySelector(".nyertesSz");
 let zseton = 5000;
 let kijeloltbet = 0;
 
+function lox() {
+  if (zseton <= 0) {
+    console.log(Lox);
+    Lox.style.display = "flex";
+    content.style.display = "none";
+    document.body.style.backgroundColor = "rgb(221, 0, 0)";
+    audio.play();
+  }
+}
 let d = {
   0: [],
   1: [],
@@ -398,4 +411,5 @@ function vissza(item) {
   zerro();
   allpiros();
   allfekete();
+  lox();
 }

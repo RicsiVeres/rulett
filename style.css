@@ -1,5 +1,5 @@
 @import url("https://css.gg/square.css");
-* {
+body {
   margin: 0;
   padding: 0;
   /*background: linear-gradient(#5c1a91, #a67ee7);*/
@@ -180,4 +180,11 @@ i {
     text-align: center;
     margin-top: 25%;
   }
+}
+.lox {
+  display: none;
+  justify-content: center;
+  margin-top: 25vh;
+  font-size: 2rem;
+  background-color: rgb(221, 0, 0);
 }
